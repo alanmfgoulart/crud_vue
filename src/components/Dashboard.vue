@@ -58,7 +58,7 @@
         methods: {
             async getPedidos() {
 
-                const req = await fetch("http://localhost:3000/burguers");
+                const req = await fetch("https://appburguer.netlify.app:3000/burguers");
                 const data = await req.json();
                 this.burguers = data;
 
@@ -70,7 +70,7 @@
             
             async getStatus() {
 
-                const req = await fetch("http://localhost:3000/Status");
+                const req = await fetch("https://appburguer.netlify.app:3000/Status");
                 const data = await req.json();
                 this.status = data;
 
@@ -78,7 +78,7 @@
 
             async deleteBurguer(id) {
                 
-                const req = await fetch('http://localhost:3000/burguers/'+id, {method: "DELETE"});                          
+                const req = await fetch('https://appburguer.netlify.app:3000/burguers/'+id, {method: "DELETE"});                          
                 
                 const res = await req.json();
 
@@ -101,7 +101,7 @@
 
                 const dataJson = JSON.stringify({status: option});
 
-                const req = await fetch("http://localhost:3000/burguers/"+id, {
+                const req = await fetch("https://appburguer.netlify.app:3000/burguers/"+id, {
                     method: "PATCH",
                     headers: {"Content-Type": "application/json"},
                     body: dataJson
