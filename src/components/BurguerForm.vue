@@ -61,7 +61,7 @@ export default {
     methods: {
         async getIngredientes() {
 
-            const req = await fetch("https://appburguer.netlify.app:3000/ingredientes");
+            const req = await fetch("http://localhost:3000/ingredientes");
             const data = await req.json();
         
             this.paes = data.paes;
@@ -84,7 +84,7 @@ export default {
 
             const dataJson = JSON.stringify(data);
 
-            const req = await fetch("https://appburguer.netlify.app:3000/burguers", {
+            const req = await fetch("http://localhost:3000/burguers", {
                 method: "POST",
                 headers: { "Content-Type": "application/json"},
                 body: dataJson
